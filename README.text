@@ -1,0 +1,231 @@
+# Pest Detection and Population Count Using Deep Learning Techniques
+
+## Overview
+
+This project presents an intelligent pest detection and population counting system for agricultural applications using Deep Learning techniques. The system automatically detects crop pests, counts the pest population, and provides severity-based recommendations for farmers.
+
+The project utilizes Grounding DINO for automatic annotation generation and YOLOv8 for pest detection and population counting.
+
+---
+
+## Objectives
+
+* Detect agricultural pests automatically.
+* Count the number of pests present in an image.
+* Reduce manual monitoring efforts.
+* Provide pest management recommendations.
+* Assist farmers in making timely decisions.
+
+---
+
+## Dataset
+
+The dataset was collected from multiple sources:
+
+* Kaggle Datasets (IP102)
+* Google Images
+* Agricultural Pest Image Collections
+
+### Classes Used
+
+1. Aphid
+2. Armyworm
+3. Grasshopper
+4. Stem Borer
+5. White Grub
+6. NOT_A_PEST
+
+### Dataset Statistics
+
+| Dataset Split | Images |
+| ------------- | ------ |
+| Train         | 4141   |
+| Validation    | 516    |
+| Test          | 514    |
+
+Total Images: 5171
+
+Note: The complete dataset is not included in this repository due to storage limitations.
+
+---
+
+## Methodology
+
+### 1. Image Collection
+
+Pest images were collected from publicly available agricultural datasets and image repositories.
+
+### 2. Automatic Annotation
+
+Grounding DINO was used to automatically generate bounding boxes around pest objects.
+
+### 3. Label Conversion
+
+Generated annotations were converted into YOLO format (.txt files).
+
+### 4. Dataset Preparation
+
+Annotated images and labels were organized into train, validation, and test sets.
+
+### 5. Model Training
+
+YOLOv8 was trained using the prepared dataset for pest detection and population counting.
+
+### 6. Prediction and Advisory
+
+The trained model detects pests, counts the pest population, and provides recommendations based on severity levels.
+
+---
+
+## Project Architecture
+
+Input Images
+↓
+Grounding DINO
+↓
+Automatic Bounding Box Generation
+↓
+Filtering (Threshold + NMS)
+↓
+YOLO Annotation Files
+↓
+Dataset Preparation
+↓
+YOLOv8 Training
+↓
+Pest Detection
+↓
+Population Counting
+↓
+Farmer Advisory System
+
+---
+
+## Technologies Used
+
+* Python
+* YOLOv8
+* Grounding DINO
+* PyTorch
+* OpenCV
+* Streamlit
+* NumPy
+* Pandas
+* Pillow
+
+---
+
+## Model Performance
+
+### Classification Performance
+
+| Metric    | Value  |
+| --------- | ------ |
+| Accuracy  | 92.41% |
+| Precision | 93%    |
+| Recall    | 92%    |
+| F1-Score  | 92%    |
+
+### Class-wise Performance
+
+| Class       | Precision | Recall | F1-Score |
+| ----------- | --------- | ------ | -------- |
+| NOT_A_PEST  | 0.93      | 0.80   | 0.86     |
+| Aphid       | 0.97      | 0.99   | 0.98     |
+| Armyworm    | 0.85      | 0.93   | 0.89     |
+| Grasshopper | 1.00      | 0.99   | 0.99     |
+| Stem Borer  | 0.89      | 0.85   | 0.87     |
+| White Grub  | 0.91      | 0.99   | 0.95     |
+
+---
+
+## Folder Structure
+
+```text
+Pest-Detection-And-Population-Count/
+│
+├── app/
+│   └── app.py
+│
+├── model/
+│   └── yolov8_pest_model.pt
+│
+├── sample_images/
+│
+├── screenshots/
+│
+├── results/
+│
+├── docs/
+│
+├── README.md
+├── requirements.txt
+└── .gitignore
+```
+
+---
+
+## Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/yourusername/Pest-Detection-And-Population-Count.git
+```
+
+### Move to Project Folder
+
+```bash
+cd Pest-Detection-And-Population-Count
+```
+
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Run Application
+
+```bash
+streamlit run app/app.py
+```
+
+---
+
+## Features
+
+* Automatic Pest Detection
+* Population Counting
+* Bounding Box Visualization
+* Severity Assessment
+* Natural Control Suggestions
+* Chemical Control Suggestions
+* Farmer-Friendly User Interface
+
+---
+
+## Future Enhancements
+
+* Real-time Camera Monitoring
+* Mobile Application Integration
+* Multi-Crop Pest Detection
+* Cloud-Based Deployment
+* IoT Sensor Integration
+
+---
+
+## Academic Project
+
+Final Year B.Tech/B.E Project
+
+Title:
+"Pest Detection and Population Count Using Deep Learning Techniques"
+
+---
+
+## License
+
+This project is developed for academic and research purposes.
